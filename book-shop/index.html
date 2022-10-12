@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Book Shop</title>
+</head>
+
+<body onload="onInit()">
+    <h1>Welcome to my bookshop</h1>
+    <p class="create-new-book" onclick="onCreateBook()">Create new book</p>
+
+    <form class="add-book" onsubmit="onAddBook(event)">
+        <input type="text"  name="book-name" placeholder="Type the book name" />
+        <input type="text" name="book-price" placeholder="Type the book price" />
+        <button>add</button>
+    </form>
+
+    <form class="update-book" onsubmit="updateBook(event)">
+        <input type="text" name="book-update-price" placeholder="Type the book price" />
+        <button>add</button>
+        <button class="close" onclick="updateToggle('.update-book')">X</button>
+    </form>
+
+    <section class="filter">
+        <select onchange="onSetFilter(this,value)">
+            <option value="all">All</option>
+            <option value="price">Max Price</option>
+            <option value="rate">Min Rate</option>
+        </select>
+
+        <input type="text" oninput="onSetFilterByTxt(this.value)" placeholder="Type a book name" />
+        <button class="swtich-presentation tiles" onclick="onSwitchingTiles()"><img src="img/9dotssqure.png"></button>
+        <button class="swtich-presentation lines" onclick="onSwitchingTable()"><img src="img/horizontalline.png"></button>
+
+    </section>
+
+    <table class="books-table"></table>
+    <section class="books-cards"></section>
+    <div class="modal">
+        <h3></h3>
+        <p class="modal-p"></p>
+        <section class="page-scroller">
+        <button onclick="onPrevPage()">prev</button>
+        <p class="page-num"></p>    
+        <button onclick="onNextPage()">Next</button><br>
+        </section>
+        <button onclick="onCloseModal()">Close</button>
+    </div>
+    
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+
+</body>
+
+</html>

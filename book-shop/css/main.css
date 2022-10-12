@@ -1,0 +1,150 @@
+
+
+.create-new-book{
+    color: rgb(85, 169, 247);
+}
+
+.create-new-book:hover{
+    cursor: pointer;
+}
+
+table{
+    width: 80vh;
+    text-align: center;
+    
+}
+
+th,td{
+    border: 1px solid black;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.modal {
+    background-color: #111;
+    padding: 10px;
+    position: absolute;
+    top: 0px;
+    left: 150%;
+    height: 80vh;
+    min-width: 300px;
+    text-align: center;
+}
+.modal.open {
+    left: 50%;
+    transition: left .5s;
+}
+.modal-p{
+    color:pink;
+    text-transform: capitalize;
+}
+
+h3{
+    color:pink;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.modal > p {
+    text-align: left;
+}
+
+.rate{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.rate-num{
+    border: black solid 1px;
+    width: 30px;
+    text-align: center;
+}
+
+.rate button{
+  height: min-content;
+  margin-top: auto;
+  margin-bottom: auto;  
+}
+
+.page-scroller{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-num{
+    color: pink;
+    width: 20px;
+}
+
+.action{
+    color: white;
+    border-radius: 5px;
+}
+
+.read{
+    background-color: blue;
+}
+
+.update{
+    background-color: orange;
+}
+
+.delete{
+    background-color: red;
+}
+
+img{
+    height: 15px;
+    width: 15px;
+}
+
+.update-book{
+    display: flex;
+    position: absolute;
+    right: 150%;
+    top:  100px;
+    min-width: 300px;
+    background-color: rgb(107, 218, 166);
+    height: 100px;
+    padding-left: 20px;
+    padding-right: 5px;
+    border-radius: 25px;
+    align-items: center;
+}
+
+.add-book{
+    display: none;
+}
+
+.update-book.open {
+    box-sizing: border-box;
+    right: 58%;
+    transition: right .5s;
+}
+
+.close{
+    align-self: flex-start;
+    border-radius: 5px;
+}
+
+.cover{
+    width: 150px;
+    height: 150px;
+}
+
+.books-cards{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+}
+
+.book{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
