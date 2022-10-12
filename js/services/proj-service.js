@@ -52,3 +52,15 @@ function _createprojs() {
 function _saveprojsToStorage(key = STORAGE_KEY, val = gProjs){
     saveToStorage(key, val)
 }
+
+function contactMe(){
+    var email = document.querySelector('[name = email]').value
+    var subject = document.querySelector('[name = subject]').value
+    var mBody = document.querySelector('[name = mBody]').value
+    if(email.length > 0 && subject.length > 0 && mBody.length > 0){
+        window.open("https://mail.google.com/mail/?view=cm&fs=1&to="+ email + "&su=" + subject + "&body=" + mBody, "submitWindow","popup")
+        document.querySelector('[name = email]').value = ''
+        document.querySelector('[name = subject]').value = ''
+        document.querySelector('[name = mBody]').value = ''
+    }
+}
