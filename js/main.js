@@ -26,7 +26,7 @@ function renderProjectModal(){
                                     <p>${proj.desc}</p>
                                     <ul class="list-inline">
                                         <li>Date: ${proj.publishedAt}</li>
-                                        <li>Client: <a href= ${proj.url}>go to preject </a></li>
+                                        <li>Client: <a href= ${proj.url} target="_blank">go to preject </a></li>
                                         <li>Category: ${proj.labels[0]}</li>
                                     </ul>
                                     <button class="btn btn-primary" data-dismiss="modal" type="button">
