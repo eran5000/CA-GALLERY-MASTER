@@ -672,6 +672,7 @@ ul.social-buttons li a:hover {
     color: white;
     border-color: #b48b01;
     background-color: rgb(66, 66, 252);
+
 }
 .btn-primary.active,
 .btn-primary:active,
@@ -704,6 +705,7 @@ fieldset[disabled] .btn-primary:hover {
     background-color: blue;
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
+    border-radius: 25px;
 }
 .btn-xl.focus,
 .btn-xl:focus {
@@ -712,8 +714,8 @@ fieldset[disabled] .btn-primary:hover {
     background-color: rgb(66, 66, 252);
 }
 .btn-xl:hover {
-    color: white;
-    border-color: #f6bf01;
+    color: black;
+    border-color: white;
     background-color: rgb(66, 66, 252);
 }
 .btn-xl.active,
