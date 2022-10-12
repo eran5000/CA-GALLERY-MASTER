@@ -781,4 +781,21 @@ fieldset[disabled] .btn-xl:hover {
     padding: 12px 20px;
 }
 
+#carouselIndicators{
+    text-align: center;
+    height:350px;
+}
+
+#services{
+    background-color: rgb(210, 241, 247);
+    border-radius: 25px;
+    padding: 5%;
+
+}
+
+img{
+    animation: play 1.5 steps(10) infinite;
+}
+
+
 
