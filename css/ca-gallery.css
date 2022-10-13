@@ -267,7 +267,8 @@ header.masthead .intro-text .intro-heading {
     border-radius: 25px;
 }
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
-    opacity: 1;
+    opacity: 0.6;
+    border-radius: 70px;
 }
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
     font-size: 20px;
@@ -315,20 +316,27 @@ header.masthead .intro-text .intro-heading {
     max-width: none;
     height: 100%;
     margin: 0;
+    overflow: hidden;
 }
 .portfolio-modal .modal-content {
     min-height: 100%;
-    padding: 100px 0;
+    padding: 60px 0;
     text-align: center;
     border: none;
     border-radius: 0;
     background-clip: border-box;
     -webkit-box-shadow: none;
     box-shadow: none;
+    width:max-content;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
 .portfolio-modal .modal-content h2 {
-    font-size: 3em;
-    margin-bottom: 15px;
+    width: min-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto ;
 }
 .portfolio-modal .modal-content p {
     margin-bottom: 30px;
@@ -343,7 +351,7 @@ header.masthead .intro-text .intro-heading {
     margin-top: 0;
     margin-bottom: 30px;
 }
-.portfolio-modal .modal-content img {
+.portfolio-modal .modal-content{
     margin-bottom: 30px;
 }
 .portfolio-modal .modal-content button {
@@ -353,8 +361,8 @@ header.masthead .intro-text .intro-heading {
     position: absolute;
     top: 25px;
     right: 25px;
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     background-color: transparent;
 }
@@ -366,7 +374,7 @@ header.masthead .intro-text .intro-heading {
     
     z-index: 1051;
     width: 1px;
-    height: 75px;
+    height: 50px;
     margin-left: 35px;
     /* IE 9 */
     
@@ -380,7 +388,7 @@ header.masthead .intro-text .intro-heading {
     
     z-index: 1052;
     width: 1px;
-    height: 75px;
+    height: 50px;
     /* IE 9 */
     
     -webkit-transform: rotate(90deg);
@@ -793,8 +801,19 @@ fieldset[disabled] .btn-xl:hover {
 
 }
 
-img{
-    animation: play 1.5 steps(10) infinite;
+.img-fluid{
+    max-height: 350px;
+    min-height: 350px;
+    border-radius: 70px;
+    min-width: 100%;
+}
+
+.modal-body .img-fluid{
+    min-height: 70px;
+    max-height: 200px;
+    border-radius: 25px;
+    min-width: 70px;
+    max-width: 200px;
 }
 
 

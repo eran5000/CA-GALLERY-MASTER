@@ -23,7 +23,6 @@ function renderProjectModal(){
                                     <h2>${proj.name}</h2>
                                     <p class="item-intro text-muted">${proj.title}</p>
                                     <img class="img-fluid d-block mx-auto" src= ${proj.img} alt="">
-                                    <p>${proj.desc}</p>
                                     <ul class="list-inline">
                                         <li>Date: ${proj.publishedAt}</li>
                                         <li>Client: <a href= ${proj.url} target="_blank">go to project </a></li>
@@ -55,7 +54,7 @@ function renderPortfolio(){
             </div>`
     const strHtmls = projs.map(proj => {
         return `
-            <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="col-md-4 col-sm-6 portfolio-item" >
                 <a class="portfolio-link" data-toggle="modal" href="#${proj.id}">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content">
