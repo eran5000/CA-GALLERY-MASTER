@@ -30,6 +30,11 @@ button:hover{
     cursor: pointer;
 }
 
+thead{
+    background-color: black;
+    border: 1px solid white;
+}
+
 /* .modal {
     background-color: #111;
     padding: 10px;
@@ -158,7 +163,19 @@ img{
 }
 
 .book{
+    background-color: rgb(12, 12, 12,0.3);
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+.lengbut{
+    border: 0px;
+    background-color: rgb(235, 226, 226,0.0);
+}
+
+.lengbut:hover{
+    font-size: large;
+}
+
