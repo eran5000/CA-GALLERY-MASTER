@@ -816,5 +816,9 @@ fieldset[disabled] .btn-xl:hover {
     max-width: 200px;
 }
 
+.modal-body .h1{
+    position: fixed;
+}
+
 
 
