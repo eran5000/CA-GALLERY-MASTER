@@ -12,6 +12,7 @@ function onInit() {
     isTable = loadFromStorage('favLayout')
     isTable? renderBooks() : renderTiles()
     onSetFilter({value: 'all'})
+    caruselrender()
 }
 
 function renderBooks(books = gBooks) {
@@ -68,6 +69,7 @@ function onAddBook(ev){
         price = parseFloat(price).toFixed(2) + '$'
         addBook(name,price)
         isTable? renderBooks() : renderTiles()
+        caruselrender()
     }
 }
 
@@ -185,4 +187,33 @@ function onCreateBook(){
 
 function onChangeLeng(leng){
     changeLeng(leng)
+}
+
+function caruselrender(books = gBooks){
+    const strHtmls = books.map(book => {
+        return `<div class="text-center carousel-item">
+            <div class="col-md-4 mx-auto" alt="${book.id}">
+            <section class= "row"> 
+                <section class= "col-xs-6 leng title">Title</section>
+                <section class= "col-xs-6">:${book.title}</section>
+            </section>
+            ${book.cover}
+            <section class= "row">     
+                <section class= "col-xs-6 leng price">Price</section>
+                <section class= "col-xs-6">:${book.price}</section>
+            </section>
+            </div>
+            </div>`
+    }).join('')
+    document.querySelector('.carousel-inner').innerHTML = strHtmls
+    document.querySelector('.carousel-item').classList.add('active')
+    /* <div class="carousel-item active">
+            <div class="col-md-4 mx-auto" alt="First slide">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-square fa-stack-2x text-primary"></i>
+                <i class="fa fa-users fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="service-heading">Team Worker</h4>
+              <p class="text-muted">strong communication skills, an active listener, and know how to develops and maintains credibility with colleagues.</p>
+            </div> */
 }

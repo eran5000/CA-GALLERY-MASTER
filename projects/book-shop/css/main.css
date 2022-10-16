@@ -35,7 +35,7 @@ thead{
     border: 1px solid white;
 }
 
-/* .modal {
+.modal {
     background-color: #111;
     padding: 10px;
     position: absolute;
@@ -62,7 +62,7 @@ h3{
 
 .modal > p {
     text-align: left;
-} */
+}
 
 .rate{
     display: flex;
@@ -178,4 +178,12 @@ img{
 .lengbut:hover{
     font-size: large;
 }
+
+.carousel-item{
+    font-size: large;
+    color: white;
+    background-color: rgb(26, 25, 25,0.1);
+}
+
+
 

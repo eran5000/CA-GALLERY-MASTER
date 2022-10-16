@@ -54,19 +54,37 @@
         <button class="swtich-presentation lines" onclick="onSwitchingTable()"><img src="img/horizontalline.png"></button>
 
     </section>
-
+    
+    <!-- Books Table -->
     <table class="table table-bordered books-table"></table>
+
+    <!-- Books Cards -->
     <section class="books-cards"></section>
-    <!-- <div class="modal">
+
+    <!-- Books Carousel -->
+    <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          </div>
+          <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+    <div class="modal">
         <h3></h3>
         <p class="modal-p"></p>
         <section class="page-scroller">
-        <button onclick="onPrevPage()">prev</button>
+        <button class="leng prev" onclick="onPrevPage()">prev</button>
         <p class="page-num"></p>    
-        <button onclick="onNextPage()">Next</button><br>
+        <button class="leng next" onclick="onNextPage()">Next</button><br>
         </section>
-        <button onclick="onCloseModal()">Close</button>
-    </div> -->
+        <button class="leng closer" onclick="onCloseModal()">Close</button>
+    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/vendor/jquery/jquery.min.js"></script>

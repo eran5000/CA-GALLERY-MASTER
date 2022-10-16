@@ -31,6 +31,9 @@ const i18n = [
         maxPrice:{heb:"מחיר מקסימלי" ,eng:"Max Price"}, 
         minRate:{heb:"דירוג מינימלי" ,eng:"Min Rate"},
         add:{heb:"הוסף" ,eng:"Add"},
+        next:{heb:"הבא" ,eng:"Next"},
+        prev:{heb:"הקודם" ,eng:"Prev"},
+        closer:{heb:"סגור" ,eng:"close"},
     }
 ]
 
@@ -188,6 +191,7 @@ function readBook(bookId){
     elModal.querySelector('.modal-p').innerText = book.desc[gPageIdx - 1]
     elModal.querySelector('.page-num').innerHTML = gPageIdx + '/' + book.pageSize
     elModal.classList.add('open')
+    document.querySelector('.modal').style.display = 'block'
 }
 
 function nextPage(){
@@ -202,7 +206,7 @@ function nextPage(){
 
 function prevPage(){
     var elModal = document.querySelector('.modal')
-    if(gPageIdx > 0){
+    if(gPageIdx > 1){
         gPageIdx--
         elModal.querySelector('.modal-p').innerText = gOpenBook.desc[gPageIdx - 1]
         elModal.querySelector('.page-num').innerHTML = gPageIdx + '/' + gOpenBook.pageSize
@@ -234,6 +238,7 @@ function updateToggle(){
 
 function closeModal(){
     document.querySelector('.modal').classList.remove('open')
+    document.querySelector('.modal').style.display = 'none'
     gPageIdx = 1
     _saveBooksToStorage('pageDB', gPageIdx)
     _saveBooksToStorage()
@@ -270,5 +275,6 @@ function changeLeng(leng){
     _saveBooksToStorage('lengDB',gLengKey)
     
 }
+
 
 
