@@ -1,6 +1,9 @@
 body{
     overflow: hidden;
     direction: ltr;
+    background:fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
 .create-new-book{
@@ -11,16 +14,17 @@ body{
     cursor: pointer;
 }
 
+.books-table{
+    background-color: rgb(19, 18, 18, 0.4);
+    color: white;
+    /* opacity: 0.4; */
+}
 
 table{
     width: 80vh;
     text-align: center;
     
 }
-
-/* th,td{
-    border: 1px solid black;
-} */
 
 button:hover{
     cursor: pointer;
@@ -90,7 +94,7 @@ h3{
 }
 
 .action{
-    color: black;
+    color: white;
     border-radius: 5px;
 }
 
