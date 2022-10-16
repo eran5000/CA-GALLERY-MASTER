@@ -18,15 +18,15 @@ table{
     
 }
 
-th,td{
+/* th,td{
     border: 1px solid black;
-}
+} */
 
 button:hover{
     cursor: pointer;
 }
 
-.modal {
+/* .modal {
     background-color: #111;
     padding: 10px;
     position: absolute;
@@ -53,7 +53,7 @@ h3{
 
 .modal > p {
     text-align: left;
-}
+} */
 
 .rate{
     display: flex;
@@ -65,12 +65,16 @@ h3{
     border: black solid 1px;
     width: 30px;
     text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .rate button{
   height: min-content;
   margin-top: auto;
-  margin-bottom: auto;  
+  margin-bottom: auto;
+  background-color: aquamarine;
+  border-radius: 5px;  
 }
 
 .page-scroller{

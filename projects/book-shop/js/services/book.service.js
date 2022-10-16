@@ -263,7 +263,9 @@ function changeLeng(leng){
     document.getElementsByName('book-name')[0].placeholder = i18n[0]['bookName'][leng]
     document.getElementsByName('new-book-name')[0].placeholder = i18n[0]['bookName'][leng]
     document.getElementsByName('book-price')[0].placeholder = i18n[0]['bookPrice'][leng]
+    document.getElementsByName('book-update-price')[0].placeholder = i18n[0]['bookPrice'][leng]
     document.querySelector('body').style.direction = direction
+    document.querySelector('.update-book').style.direction = direction
     gLengKey = leng
     _saveBooksToStorage('lengDB',gLengKey)
     

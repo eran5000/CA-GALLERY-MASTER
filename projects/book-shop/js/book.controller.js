@@ -18,17 +18,17 @@ function renderBooks(books = gBooks) {
     isTable = true
     document.querySelector('.books-table').innerHTML = `<thead>
         <tr>
-            <th class="leng id">Id</th>
-            <th class="leng title">Title</th>
-            <th class="leng price">Price</th>
-            <th class="leng rate">Rate</th>
-            <th class="leng action">Actions</th>
+            <th scope="col" class="text-center border-secondary leng id">Id</th>
+            <th scope="col" class="text-center border-secondary leng title">Title</th>
+            <th scope="col" class="text-center border-secondary leng price">Price</th>
+            <th scope="col" class="text-center border-secondary leng rate">Rate</th>
+            <th scope="col" colspan="3" class="text-center border-secondary leng action">Actions</th>
         </tr>
         </thead>
         <tbody class="books-container"></tbody>`
     /* const books = gBooks */ 
     const strHtmls = books.map(book => {
-        return `<tr>
+        return `<tr scope="row">
             <td>${book.id}</td>
             <td>${book.title}</td>
             <td>${book.price}</td>
@@ -49,7 +49,7 @@ function renderBooks(books = gBooks) {
     });
     document.querySelector('.tiles').style.backgroundColor = ''
     document.querySelector('.lines').style.backgroundColor = 'turquoise'
-    document.querySelector('table').style.border = '1px solid black'
+    /* document.querySelector('table').style.border = '1px solid black' */
     changeLeng(gLengKey)
 }
 
@@ -131,7 +131,7 @@ function onSwitchingTiles(){
 function onSwitchingTable(){
     document.querySelector('.books-table').innerHTML = ''
     renderBooks()
-    document.querySelector('.books-table').style.border = "1px solid black"
+    /* document.querySelector('.books-table').style.border = "1px solid black" */
     document.querySelector('.books-table').style.display = ''
     _saveBooksToStorage('favLayout', isTable)
 }
@@ -140,18 +140,28 @@ function renderTiles(books = gBooks){
     isTable = false
     const strHtmls = books.map(book => {
         return `<section class="book book${book.id}">
-        <section class= "leng id">Id:${book.id}</section>     
-        ${book.cover}
-        <section class= "leng title">Title:${book.title}</section>     
-            <section class= "leng price">Price:${book.price}</section>     
+            <section class= "row">
+                <section class= "leng id">Id</section>
+                <section class= "col-xs-6">:${book.id}</section>
+            </section>     
+            ${book.cover}
+            <section class= "row"> 
+                <section class= "col-xs-6 leng title">Title</section>
+                <section class= "col-xs-6">:${book.title}</section>
+            </section>
+            <section class= "row">     
+                <section class= "col-xs-6 leng price">Price</section>
+                <section class= "col-xs-6">:${book.price}</section>
+            </section>     
             <section class="rate">
                 <button class="plus" onclick="onPlusRate(${book.id})">+</button>
                 <p class="rate-num">${book.rate}</p>
                 <button class="minus" onclick="onMinusRate(${book.id})">-</button>
             </section>
-            <section><button class="leng action read" onclick="onReadBook(${book.id})">Read</button></section>
-            <section><button class="leng action update" onclick="onUpdateBook(${book.id})">Update</button></section>
-            <section><button class="leng action delete" onclick="onRemoveBook(${book.id})">Delete</button></section>
+                <section><button class="leng action read" onclick="onReadBook(${book.id})">Read</button></section>
+                <section><button class="leng action update" onclick="onUpdateBook(${book.id})">Update</button></section>
+                <section><button class="leng action delete" onclick="onRemoveBook(${book.id})">Delete</button></section>
+            </section>
         </section>`
     }).join('')
     document.querySelector('.books-table').innerHTML = ''
@@ -166,6 +176,7 @@ function renderTiles(books = gBooks){
     });
     document.querySelector('.tiles').style.backgroundColor = 'turquoise'
     document.querySelector('.lines').style.backgroundColor = ''
+    changeLeng(gLengKey)
 }
 
 function onCreateBook(){ 
