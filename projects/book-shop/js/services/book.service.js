@@ -20,7 +20,7 @@ const i18n = [
         price:{heb:"מחיר", eng:"Price"},
         rate:{heb:"דירוג", eng:"Rate"},
         action:{heb:"פעולות", eng:"Action"},
-        currecy:{heb:"\u20AA" ,eng:"\u0024"},
+        currency:{heb:"\u20AA" ,eng:"\u0024"},
         read:{heb:"קרא" ,eng:"Read"},
         update:{heb:"עדכן" ,eng:"Update"},
         delete:{heb:"מחק" ,eng:"Delete"},
@@ -59,7 +59,7 @@ function _createbooks() {
             {
                 id: 1,
                 title: 'Learning Laravel',
-                price: 18.90 + '$',
+                price: 18.90,
                 desc: [],
                 pageSize: Math.floor(getRandomIntInclusive(1,6)),
                 rate: 0,
@@ -69,7 +69,7 @@ function _createbooks() {
             {
                 id: 2,
                 title:'Beginning with Laravel',
-                price: 6.65 + '$',
+                price: 6.65,
                 desc: [],
                 pageSize: Math.floor(getRandomIntInclusive(1,6)),
                 rate: 0,
@@ -79,7 +79,7 @@ function _createbooks() {
             {
                 id: 3,
                 title: 'Java for developers',
-                price: 7.20 + '$',
+                price: 7.20,
                 desc: [],
                 pageSize: Math.floor(getRandomIntInclusive(1,6)),
                 rate: 0,
@@ -117,7 +117,7 @@ function updateBook(ev){
     var price = document.querySelector('[name = book-update-price]').value
     const bookIdx = gBooks.findIndex(book => gBookId === book.id)
     if(price != ''){
-        price = parseFloat(price).toFixed(2) + '$'
+        price = parseFloat(price).toFixed(2)
         gBooks[bookIdx].price =  price
         updateToggle('.update-book')
         _saveBooksToStorage()

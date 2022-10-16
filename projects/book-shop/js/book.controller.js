@@ -32,7 +32,7 @@ function renderBooks(books = gBooks) {
         return `<tr scope="row">
             <td>${book.id}</td>
             <td>${book.title}</td>
-            <td>${book.price}</td>
+            <td>${book.price}<span class="leng currency"></span></td>
             <td class="rate">
                 <button class="plus" onclick="onPlusRate(${book.id})">+</button>
                 <p class="rate-num">${book.rate}</p>
@@ -66,7 +66,7 @@ function onAddBook(ev){
     var name = document.querySelector('[name = new-book-name]').value
     var price = document.querySelector('[name = book-price]').value
     if(name.length > 0 && !isNaN(price)){
-        price = parseFloat(price).toFixed(2) + '$'
+        price = parseFloat(price).toFixed(2)
         addBook(name,price)
         isTable? renderBooks() : renderTiles()
         caruselrender()
@@ -153,7 +153,7 @@ function renderTiles(books = gBooks){
             </section>
             <section class= "row">     
                 <section class= "col-xs-6 leng price">Price</section>
-                <section class= "col-xs-6">:${book.price}</section>
+                <section class= "col-xs-6">:${book.price}<span class="leng currency"></section>
             </section>     
             <section class="rate">
                 <button class="plus" onclick="onPlusRate(${book.id})">+</button>
