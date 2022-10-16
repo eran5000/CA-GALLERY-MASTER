@@ -333,7 +333,7 @@ header.masthead .intro-text .intro-heading {
     width: 60%;
 }
 .portfolio-modal .modal-content h2 {
-    width: min-content;
+    /* width: min-content; */
     text-align: center;
     margin-left: auto;
     margin-right:auto ;
@@ -801,23 +801,24 @@ fieldset[disabled] .btn-xl:hover {
 
 }
 
-.img-fluid{
-    max-height: 350px;
-    min-height: 350px;
+/* .img-fluid{
+    max-height: 300px;
+    min-height: 300px;
     border-radius: 70px;
     min-width: 100%;
-}
+} */
 
 .modal-body .img-fluid{
-    min-height: 70px;
-    max-height: 200px;
     border-radius: 25px;
+    /* min-height: 70px;
+    max-height: 200px;
     min-width: 70px;
-    max-width: 200px;
+    max-width: 200px; */
 }
 
-.modal-body .h1{
-    position: fixed;
+.modal-body{
+    overflow: hidden;
+    overflow-wrap:break-word;
 }
 
 
