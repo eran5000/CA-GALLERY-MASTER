@@ -1,8 +1,12 @@
 'use strict'
 var gPageIdx = loadFromStorage('pageDB')
+var gLengKey = loadFromStorage('lengDB')
 var isTable = true
-var isCreateBookOpen = false
+var isUpdateBookOpen = false
+var isCreateBookOpen = false 
 if(isNaN(gPageIdx)) gPageIdx = 1
+console.log(gLengKey);
+if(gLengKey === null) gLengKey = 'eng'
 
 function onInit() {
     isTable = loadFromStorage('favLayout')
@@ -14,11 +18,11 @@ function renderBooks(books = gBooks) {
     isTable = true
     document.querySelector('.books-table').innerHTML = `<thead>
         <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Rate</th>
-            <th>Actions</th>
+            <th class="leng id">Id</th>
+            <th class="leng title">Title</th>
+            <th class="leng price">Price</th>
+            <th class="leng rate">Rate</th>
+            <th class="leng action">Actions</th>
         </tr>
         </thead>
         <tbody class="books-container"></tbody>`
@@ -33,9 +37,9 @@ function renderBooks(books = gBooks) {
                 <p class="rate-num">${book.rate}</p>
                 <button class="minus" onclick="onMinusRate(${book.id})">-</button>
             </td>
-            <td><button class="action read" onclick="onReadBook(${book.id})">Read</button></td>
-            <td><button class="action update" onclick="onUpdateBook(${book.id})">Update</button></td>
-            <td><button class="action delete" onclick="onRemoveBook(${book.id})">Delete</button></td>
+            <td><button class="leng action read" onclick="onReadBook(${book.id})">Read</button></td>
+            <td><button class="leng action update" onclick="onUpdateBook(${book.id})">Update</button></td>
+            <td><button class="leng action delete" onclick="onRemoveBook(${book.id})">Delete</button></td>
             <tr>`
     }).join('')
     document.querySelector('.books-container').innerHTML = strHtmls
@@ -46,6 +50,7 @@ function renderBooks(books = gBooks) {
     document.querySelector('.tiles').style.backgroundColor = ''
     document.querySelector('.lines').style.backgroundColor = 'turquoise'
     document.querySelector('table').style.border = '1px solid black'
+    changeLeng(gLengKey)
 }
 
 function onRemoveBook(bookId){
@@ -57,13 +62,12 @@ function onAddBook(ev){
     ev.preventDefault()
    /*  var name= prompt('what is the name of the book?')
     var price= +prompt('what is the price of the book?') */
-    var name = document.querySelector('[name = book-name]').value
+    var name = document.querySelector('[name = new-book-name]').value
     var price = document.querySelector('[name = book-price]').value
     if(name.length > 0 && !isNaN(price)){
         price = parseFloat(price).toFixed(2) + '$'
         addBook(name,price)
         isTable? renderBooks() : renderTiles()
-        document.querySelector('.add-book').style.display = 'none'
     }
 }
 
@@ -136,18 +140,18 @@ function renderTiles(books = gBooks){
     isTable = false
     const strHtmls = books.map(book => {
         return `<section class="book book${book.id}">
-        <section class= "id">Id:${book.id}</section>     
+        <section class= "leng id">Id:${book.id}</section>     
         ${book.cover}
-        <section class= "title">Title:${book.title}</section>     
-            <section class= "price">Price:${book.price}</section>     
+        <section class= "leng title">Title:${book.title}</section>     
+            <section class= "leng price">Price:${book.price}</section>     
             <section class="rate">
                 <button class="plus" onclick="onPlusRate(${book.id})">+</button>
                 <p class="rate-num">${book.rate}</p>
                 <button class="minus" onclick="onMinusRate(${book.id})">-</button>
             </section>
-            <section><button class="action read" onclick="onReadBook(${book.id})">Read</button></section>
-            <section><button class="action update" onclick="onUpdateBook(${book.id})">Update</button></section>
-            <section><button class="action delete" onclick="onRemoveBook(${book.id})">Delete</button></section>
+            <section><button class="leng action read" onclick="onReadBook(${book.id})">Read</button></section>
+            <section><button class="leng action update" onclick="onUpdateBook(${book.id})">Update</button></section>
+            <section><button class="leng action delete" onclick="onRemoveBook(${book.id})">Delete</button></section>
         </section>`
     }).join('')
     document.querySelector('.books-table').innerHTML = ''
@@ -165,5 +169,9 @@ function renderTiles(books = gBooks){
 }
 
 function onCreateBook(){ 
-    document.querySelector('.add-book').style.display = 'block'
+    openCreateBook()
+}
+
+function onChangeLeng(leng){
+    changeLeng(leng)
 }

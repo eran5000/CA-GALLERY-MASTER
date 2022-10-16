@@ -10,29 +10,30 @@
 </head>
 
 <body onload="onInit()">
-    <h1>Welcome to my bookshop</h1>
-    <p class="create-new-book" onclick="onCreateBook()">Create new book</p>
+    <header><button class="lengbut" onclick="onChangeLeng('eng')">eng</button><button class="lengbut" onclick="onChangeLeng('heb')">heb</button></header>
+    <h1 class="leng h1">Welcome to my bookshop</h1>
+    <p class="leng create-new-book addBook" onclick="onCreateBook()">Create new book</p>
 
     <form class="add-book" onsubmit="onAddBook(event)">
-        <input type="text"  name="book-name" placeholder="Type the book name" />
+        <input type="text"  name="new-book-name" placeholder="Type the book name" />
         <input type="text" name="book-price" placeholder="Type the book price" />
-        <button>add</button>
+        <button class="leng add">add</button>
     </form>
 
     <form class="update-book" onsubmit="updateBook(event)">
         <input type="text" name="book-update-price" placeholder="Type the book price" />
-        <button>add</button>
-        <button class="close" onclick="updateToggle('.update-book')">X</button>
+        <button class="leng add">add</button>
+        <button class="close" onclick="updateToggle()">X</button>
     </form>
 
     <section class="filter">
         <select onchange="onSetFilter(this,value)">
-            <option value="all">All</option>
-            <option value="price">Max Price</option>
-            <option value="rate">Min Rate</option>
+            <option class="leng all" value="all">All</option>
+            <option class="leng maxPrice" value="price">Max Price</option>
+            <option class="leng minRate" value="rate">Min Rate</option>
         </select>
 
-        <input type="text" oninput="onSetFilterByTxt(this.value)" placeholder="Type a book name" />
+        <input type="leng text" name="book-name" oninput="onSetFilterByTxt(this.value)" placeholder="Type a book name" />
         <button class="swtich-presentation tiles" onclick="onSwitchingTiles()"><img src="img/9dotssqure.png"></button>
         <button class="swtich-presentation lines" onclick="onSwitchingTable()"><img src="img/horizontalline.png"></button>
 

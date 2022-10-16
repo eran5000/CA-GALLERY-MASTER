@@ -1,4 +1,7 @@
-
+body{
+    overflow: hidden;
+    direction: ltr;
+}
 
 .create-new-book{
     color: rgb(85, 169, 247);
@@ -7,6 +10,7 @@
 .create-new-book:hover{
     cursor: pointer;
 }
+
 
 table{
     width: 80vh;
@@ -82,7 +86,7 @@ h3{
 }
 
 .action{
-    color: white;
+    color: black;
     border-radius: 5px;
 }
 
@@ -125,6 +129,7 @@ img{
     box-sizing: border-box;
     right: 58%;
     transition: right .5s;
+    position: fixed;
 }
 
 .close{
@@ -141,6 +146,7 @@ img{
     box-sizing: border-box;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .book{

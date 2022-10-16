@@ -7,7 +7,32 @@ var gFilterBy
 var gOpenBook
 var gBookId
 
+
 _createbooks()
+/* document.getElementsByName('book-name')[0].placeholder = 'dude' */
+/* document.querySelector('.All').innerHTML =  */
+
+const i18n = [
+    {
+        h1:{heb:"ברוך הבא לחנות הספרים שלי" ,eng:"Welcome to my bookshop"},
+        id:{heb:"מזהה", eng:"Id"},
+        title:{heb:"כותרת", eng:"Title"},
+        price:{heb:"מחיר", eng:"Price"},
+        rate:{heb:"דירוג", eng:"Rate"},
+        action:{heb:"פעולות", eng:"Action"},
+        currecy:{heb:"\u20AA" ,eng:"\u0024"},
+        read:{heb:"קרא" ,eng:"Read"},
+        update:{heb:"עדכן" ,eng:"Update"},
+        delete:{heb:"מחק" ,eng:"Delete"},
+        addBook:{heb:"צור ספר חדש" ,eng:"create new book"},
+        bookName:{heb:"שם הספר" ,eng:"Type the book name"},
+        bookPrice:{heb:"מחיר הספר" ,eng:"Type the book price"},
+        all:{heb:"הכל" ,eng:"All"},
+        maxPrice:{heb:"מחיר מקסימלי" ,eng:"Max Price"}, 
+        minRate:{heb:"דירוג מינימלי" ,eng:"Min Rate"},
+        add:{heb:"הוסף" ,eng:"Add"},
+    }
+]
 
 function _createbook(title, price) {
     gBookIdCounter++
@@ -80,17 +105,24 @@ function addBook(name,price){
     gBooks.push(book)
     document.querySelector('[name = book-name]').value = ""
     document.querySelector('[name = book-price]').value = ""
+    openCreateBook()
     _saveBooksToStorage()
 }
 
 function updateBook(ev){
+    ev.preventDefault()
     var price = document.querySelector('[name = book-update-price]').value
     const bookIdx = gBooks.findIndex(book => gBookId === book.id)
-    price = parseFloat(price).toFixed(2) + '$'
-    gBooks[bookIdx].price =  price
-    updateToggle('.update-book')
-    _saveBooksToStorage()
-    isTable? renderBooks() : renderTiles()
+    if(price != ''){
+        price = parseFloat(price).toFixed(2) + '$'
+        gBooks[bookIdx].price =  price
+        updateToggle('.update-book')
+        _saveBooksToStorage()
+        isTable? renderBooks() : renderTiles()
+    }
+    document.querySelector('.update-book').classList.remove('open')
+    document.querySelector('[name = book-update-price]').value =''
+    isUpdateBookOpen = false
 }
 
 function getBookById(bookId) {
@@ -127,7 +159,7 @@ function setFilter(sort){
 }
 
 function compareByPrice(book1, book2){
-    return book2.price - book1.price
+    return parseInt(book2.price) - parseInt(book1.price)
 }
 
 function compareByRate(book1,book2){
@@ -189,14 +221,14 @@ function _saveBooksToStorage(key = STORAGE_KEY, val = gBooks){
 }
 
 function updateToggle(){
-    if(isCreateBookOpen){
+    if(isUpdateBookOpen){
         /* document.querySelector('.add-book').style.display = 'none' */
         document.querySelector('.update-book').classList.remove('open')
-        isCreateBookOpen = false
+        isUpdateBookOpen = false
     }else{
         /* document.querySelector('.add-book').style.display = 'block' */
         document.querySelector('.update-book').classList.add('open')
-        isCreateBookOpen = true
+        isUpdateBookOpen = true
     }
 }
 
@@ -205,6 +237,36 @@ function closeModal(){
     gPageIdx = 1
     _saveBooksToStorage('pageDB', gPageIdx)
     _saveBooksToStorage()
+}
+
+function openCreateBook(){
+    if(isCreateBookOpen){
+        isCreateBookOpen = false
+        document.querySelector('.add-book').style.display = 'none'
+        console.log(isCreateBookOpen);
+
+    }else{
+        isCreateBookOpen = true
+        document.querySelector('.add-book').style.display = 'block'
+        console.log(isCreateBookOpen);
+    } 
+}
+
+function changeLeng(leng){
+    var direction
+    leng === 'heb' ? direction = 'rtl' : direction = 'ltr'; 
+    var elText = document.querySelectorAll('.leng')
+    elText.forEach(text => {
+        var nameI18n = text.classList[text.classList.length - 1]
+        text.innerHTML = i18n[0][nameI18n][leng]
+    });
+    document.getElementsByName('book-name')[0].placeholder = i18n[0]['bookName'][leng]
+    document.getElementsByName('new-book-name')[0].placeholder = i18n[0]['bookName'][leng]
+    document.getElementsByName('book-price')[0].placeholder = i18n[0]['bookPrice'][leng]
+    document.querySelector('body').style.direction = direction
+    gLengKey = leng
+    _saveBooksToStorage('lengDB',gLengKey)
+    
 }
 
 
