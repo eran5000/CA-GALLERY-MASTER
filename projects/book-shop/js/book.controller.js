@@ -149,11 +149,11 @@ function renderTiles(books = gBooks){
             ${book.cover}
             <section class= "row"> 
                 <section class= "col-xs-6 leng title">Title</section>
-                <section class= "col-xs-6">:${book.title}</section>
+                <section class= "col-xs-6">: ${book.title}</section>
             </section>
             <section class= "row">     
                 <section class= "col-xs-6 leng price">Price</section>
-                <section class= "col-xs-6">:${book.price}<span class="leng currency"></section>
+                <section class= "col-xs-6">: ${book.price}<span class="leng currency"></span></section>
             </section>     
             <section class="rate">
                 <button class="plus" onclick="onPlusRate(${book.id})">+</button>
@@ -195,12 +195,12 @@ function caruselrender(books = gBooks){
             <div class="col-md-4 mx-auto" alt="${book.id}">
             <section class= "row"> 
                 <section class= "col-xs-6 leng title">Title</section>
-                <section class= "col-xs-6">:${book.title}</section>
+                <section class= "col-xs-6">: ${book.title}</section>
             </section>
             ${book.cover}
             <section class= "row">     
                 <section class= "col-xs-6 leng price">Price</section>
-                <section class= "col-xs-6">:${book.price}</section>
+                <section class= "col-xs-6">: ${book.price}<span class="leng currency"></span></section>
             </section>
             </div>
             </div>`
