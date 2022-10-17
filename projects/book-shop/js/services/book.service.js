@@ -6,6 +6,7 @@ var gBookIdCounter
 var gFilterBy
 var gOpenBook
 var gBookId
+var gLeng
 
 
 _createbooks()
@@ -228,10 +229,12 @@ function updateToggle(){
     if(isUpdateBookOpen){
         /* document.querySelector('.add-book').style.display = 'none' */
         document.querySelector('.update-book').classList.remove('open')
+        gLeng === 'heb' ? document.querySelector('.update-book').style.right = '-150%' : document.querySelector('.update-book').style.right = '150%'
         isUpdateBookOpen = false
     }else{
         /* document.querySelector('.add-book').style.display = 'block' */
         document.querySelector('.update-book').classList.add('open')
+        document.querySelector('.open').style.right = '50%'
         isUpdateBookOpen = true
     }
 }
@@ -273,6 +276,8 @@ function changeLeng(leng){
     document.querySelector('.update-book').style.direction = direction
     gLengKey = leng
     _saveBooksToStorage('lengDB',gLengKey)
+    gLeng = leng
+    leng === 'heb' ? document.querySelector('.update-book').style.right = '-150%' : document.querySelector('.update-book').style.right = '150%'
     
 }
 
