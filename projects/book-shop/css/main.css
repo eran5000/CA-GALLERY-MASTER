@@ -5,6 +5,7 @@ body{
     background:fixed;
     background-repeat: no-repeat;
     background-size:cover;
+    background-position: center,center;
 }
 
 .create-new-book{
@@ -45,11 +46,11 @@ thead{
     height: 80vh;
     min-width: 300px;
     text-align: center;
-    overflow: scroll;
 }
 .modal.open {
     left: 50%;
     transition: left .5s;
+    overflow-y: scroll;
 }
 .modal-p{
     color:pink;

@@ -235,7 +235,7 @@ function updateToggle(){
     }else{
         /* document.querySelector('.add-book').style.display = 'block' */
         document.querySelector('.update-book').classList.add('open')
-        document.querySelector('.open').style.right = '50%'
+        document.querySelector('.open').style.right = '30%'
         isUpdateBookOpen = true
     }
 }
