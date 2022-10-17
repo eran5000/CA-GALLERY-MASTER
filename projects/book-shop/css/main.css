@@ -8,6 +8,35 @@ body{
     background-position: center,center;
 }
 
+.topnav{
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background-color: rgb(19, 18, 18,0.7);
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    transition: all .5s ease-in-out;
+    align-items: center;
+    padding-bottom: 2px;
+}
+
+.addBook{
+    border: 1px white solid;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: rgb(17, 16, 16,0.8);
+    padding: 3px;
+    border-radius: 25px;
+    /* margin-right: auto; */
+    
+    
+}
+
+button{
+    transition: all .2s ease-in-out;
+}
+
 .create-new-book{
     color: rgb(85, 169, 247);
 }
@@ -30,6 +59,8 @@ table{
 
 button:hover{
     cursor: pointer;
+    transform: scale(1.2);
+    filter: brightness(85%);
 }
 
 thead{
@@ -74,11 +105,12 @@ h3{
 }
 
 .rate-num{
-    border: black solid 1px;
+    border: white solid 1px;
     width: 30px;
     text-align: center;
     margin-top: auto;
     margin-bottom: auto;
+    background-color: black;
 }
 
 .rate button{
@@ -178,8 +210,12 @@ img{
     background-color: rgb(235, 226, 226,0.0);
 }
 
+.lengbuttsection{
+    margin-left: auto;
+}
+
 .lengbut:hover{
-    font-size: large;
+    transform: scale(1.3);
 }
 
 .carousel-item{

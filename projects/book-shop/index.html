@@ -26,23 +26,39 @@
 </head>
 
 <body onload="onInit()" style="background-image:url(../../projects/book-shop/img/old-books-dark-background.webp);">
-    <header><button class="lengbut" onclick="onChangeLeng('eng')"><i class="flag-icon flag-icon-us"></i></button>
-        <button class="lengbut" onclick="onChangeLeng('heb')"><i class="flag-icon flag-icon-il"></i></button></header>
-    <h1 class="text-center font-weight-bold text-white leng h1" style="font-family:Copperplate Gothic Light" >Welcome to my bookshop</h1>
-    <p class="leng create-new-book addBook" onclick="onCreateBook()">Create new book</p>
 
+    <div class="topnav" id="navbar">
+        <p class="leng create-new-book addBook" onclick="onCreateBook()">Create new book</p>
+        <form class="add-book" onsubmit="onAddBook(event)">
+            <input type="text"  name="new-book-name" placeholder="Type the book name" />
+            <input type="text" name="book-price" placeholder="Type the book price" />
+            <button class="leng add">add</button>
+        </form>
+        <section class="lengbuttsection">
+            <button class="lengbut eng" onclick="onChangeLeng('eng')"><i class="flag-icon flag-icon-us"></i></button>
+            <button class="lengbut heb" onclick="onChangeLeng('heb')"><i class="flag-icon flag-icon-il"></i></button>
+        </section>
+    </div>
+    
+    <!-- <header><button class="lengbut" onclick="onChangeLeng('eng')"><i class="flag-icon flag-icon-us"></i></button>
+        <button class="lengbut" onclick="onChangeLeng('heb')"><i class="flag-icon flag-icon-il"></i></button></header> -->
+    <h1 class="text-center font-weight-bold text-white leng h1" style="font-family:Copperplate Gothic Light" >Welcome to my bookshop</h1>
+    <!-- <p class="leng create-new-book addBook" onclick="onCreateBook()">Create new book</p> -->
+
+    <!-- adding new book -->
     <form class="add-book" onsubmit="onAddBook(event)">
         <input type="text"  name="new-book-name" placeholder="Type the book name" />
         <input type="text" name="book-price" placeholder="Type the book price" />
         <button class="leng add">add</button>
     </form>
 
+    <!-- price update popup -->
     <form class="update-book" onsubmit="updateBook(event)">
         <input type="text" name="book-update-price" placeholder="Type the book price" />
         <button class="leng add">add</button>
         <button class="close" onclick="updateToggle()">X</button>
     </form>
-
+    <!-- Books filter -->
     <section class="filter">
         <select onchange="onSetFilter(this,value)">
             <option class="leng all" value="all">All</option>
@@ -50,6 +66,7 @@
             <option class="leng minRate" value="rate">Min Rate</option>
         </select>
 
+    <!-- Books search -->
         <input type="leng text" name="book-name" oninput="onSetFilterByTxt(this.value)" placeholder="Type a book name" />
         <button class="swtich-presentation tiles" onclick="onSwitchingTiles()"><img src="img/9dotssqure.png"></button>
         <button class="swtich-presentation lines" onclick="onSwitchingTable()"><img src="img/horizontalline.png"></button>
@@ -76,6 +93,7 @@
           </a>
         </div>
 
+    <!-- Books read popup -->
     <div class="modal">
         <h3></h3>
         <p class="modal-p"></p>
