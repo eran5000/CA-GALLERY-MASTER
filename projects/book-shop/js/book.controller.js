@@ -207,6 +207,7 @@ function caruselrender(books = gBooks){
     }).join('')
     document.querySelector('.carousel-inner').innerHTML = strHtmls
     document.querySelector('.carousel-item').classList.add('active')
+    changeLeng(gLengKey)
     /* <div class="carousel-item active">
             <div class="col-md-4 mx-auto" alt="First slide">
               <span class="fa-stack fa-4x">

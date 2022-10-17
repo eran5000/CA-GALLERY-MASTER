@@ -127,6 +127,7 @@ function updateBook(ev){
     document.querySelector('.update-book').classList.remove('open')
     document.querySelector('[name = book-update-price]').value =''
     isUpdateBookOpen = false
+    caruselrender()
 }
 
 function getBookById(bookId) {
