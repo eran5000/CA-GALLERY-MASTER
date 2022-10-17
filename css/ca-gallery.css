@@ -801,19 +801,19 @@ fieldset[disabled] .btn-xl:hover {
 
 }
 
-/* .img-fluid{
+.img-fluid{
     max-height: 300px;
-    min-height: 300px;
+    min-height: 50px;
     border-radius: 70px;
-    min-width: 100%;
-} */
-
-.modal-body .img-fluid{
+    min-width: 50px;
     border-radius: 25px;
-    /* min-height: 70px;
-    max-height: 200px;
-    min-width: 70px;
-    max-width: 200px; */
+}
+
+.modal-body{
+    min-height: 100px;
+    max-height: 600px;
+    min-width: 100px;
+    max-width: 600px;
 }
 
 .modal-body{
