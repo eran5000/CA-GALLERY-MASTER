@@ -186,5 +186,13 @@ img{
     background-color: rgb(26, 25, 25,0.1);
 }
 
+.carousel-inner{
+    text-align: center;
+}
+
+.carousel-inner .row{
+    text-align: center;
+    padding: 0px 100px
+}
 
 

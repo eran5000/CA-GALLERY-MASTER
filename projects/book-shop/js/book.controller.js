@@ -10,9 +10,9 @@ if(gLengKey === null) gLengKey = 'eng'
 
 function onInit() {
     isTable = loadFromStorage('favLayout')
+    caruselrender()
     isTable? renderBooks() : renderTiles()
     onSetFilter({value: 'all'})
-    caruselrender()
 }
 
 function renderBooks(books = gBooks) {
@@ -194,13 +194,13 @@ function caruselrender(books = gBooks){
         return `<div class="text-center carousel-item">
             <div class="col-md-4 mx-auto" alt="${book.id}">
             <section class= "row"> 
-                <section class= "col-xs-6 leng title">Title</section>
-                <section class= "col-xs-6">: ${book.title}</section>
+                <section class= "font-weight-bold col-xs-6 leng title">Title</section>
+                <section class= "col-xs-6">&nbsp;${book.title}</section>
             </section>
             ${book.cover}
             <section class= "row">     
-                <section class= "col-xs-6 leng price">Price</section>
-                <section class= "col-xs-6">: ${book.price}<span class="leng currency"></span></section>
+                <section class= "font-weight-bold col-xs-6 leng price">Price</section>
+                <section class= "col-xs-6">&nbsp;${book.price}<span class="leng currency"></span></section>
             </section>
             </div>
             </div>`
