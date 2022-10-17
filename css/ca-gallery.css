@@ -825,6 +825,8 @@ fieldset[disabled] .btn-xl:hover {
     max-height: 600px;
     min-width: 100px;
     max-width: 600px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .modal-body{
