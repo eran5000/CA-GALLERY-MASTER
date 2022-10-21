@@ -291,7 +291,7 @@ body.menu-open{
 }
 
 /* small */
-@media (min-width:640px){
+@media (min-width:0px){
     .main-layout > * :not(.full){
         max-width: var(--s);
         margin-right: auto;
