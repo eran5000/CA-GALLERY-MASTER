@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Site</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body class="main-layout">
+    <div class="main-screen full" onclick="toggleMenu()"></div>
+    <header class="main-header full flex space-between align-center">
+        <div class="logo full">Blogin</div>
+        <nav class="main-nav full">
+            <ul class="flex full clean-list">
+                <li class="full"><a class="full" href="#1">Jurnal</a></li>
+                <li class="full"><a class="full" href="#2">About</a></li>
+                <li class="full"><a class="full" href="#3">Work</a></li>
+                <li class="full"><a class="full" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button type="button" class="btn-menu full" onclick="toggleMenu()">☰</button> 
+    </header>
+
+    <main class="main-content row-layout">
+
+        <div id="1" class="row flex">
+            <img src="./img/001.jpg" alt="" class="row-image flex column">
+            <div class="row-contant flex column">
+                <h2 class="row-title">Duis aute irure dolor in henderit in voluptate.</h2>
+                <p class="row-text">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+                </p>
+                <button type="button" class="btn-row full">Continue Reading</button>
+            </div>
+        </div>
+
+        <div id="2" class="row flex">
+            <img src="./img/002.jpg" alt="" class="row-image flex column">
+            <div class="row-contant flex column">
+                <h2 class="row-title">Duis aute irure dolor in henderit in voluptate.</h2>
+                <p class="row-text">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+                </p>
+                <button type="button" class="btn-row full">Continue Reading</button>
+            </div>
+        </div>
+
+        <div id="3" class="row flex">
+            <img src="./img/003.jpg" alt="" class="row-image flex column">
+            <div class="row-contant flex column">
+                <h2 class="row-title">Duis aute irure dolor in henderit in voluptate.</h2>
+                <p class="row-text">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+                </p>
+                <button type="button" class="btn-row full">Continue Reading</button>
+            </div>
+        </div>
+
+        <div class="browse-layout full flex space-between">
+            <button type="button" class="btn-prev browse">&larr; prev</button>
+            <button type="button" class="btn-next browse">next &rarr;</button>
+        </div>
+    </main>
+
+    <footer id="contact" class="main-footer full flex column space-between align-center colored-section">
+        <h3 class="footer-logo"> blogin</h3>
+        <div class="footer-rights">© 2014 Blogin.com  -  All Rights Reserved  -  Find more free Templates at Pixelhint.com</div>
+        <ul class="social-links flex clean-list">
+            <li><a href="#" class="facebook">facebook</a></li>
+            <li><a href="#" class="twitter">twitter</a></li>
+            <li><a href="#" class="linkedin">linkedin</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.body.classList.toggle('menu-open');
+        }
+    </script>
+
+</body>
+</html>

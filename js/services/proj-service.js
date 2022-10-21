@@ -43,6 +43,16 @@ function _createprojs() {
                 publishedAt:'06/10/2022', 
                 labels: ["CRUDL", "mouse events"],
             },
+            {
+                id: 'Live-Page', 
+                name: 'blogin', 
+                title: 'read the latest articels', 
+                desc: "lorem ipsum lorem ipsum lorem ipsum",
+                img: 'img/portfolio/Live-Page.png', 
+                url: 'projects/proj-LivePage/main.html', 
+                publishedAt:'06/10/2022', 
+                labels: ["CRUDL", "mouse events"],
+            },
         ]
     }
     gProjs = projs 
