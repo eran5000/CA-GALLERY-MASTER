@@ -20,7 +20,7 @@ function renderProjectModal(){
                             <div class="col-lg-8 mx-auto">
                                 <div class="modal-body">
                                     <!-- Project Details Go Here -->
-                                    <h2>${proj.name}</h2>
+                                    <h2 class="text-responsive">${proj.name}</h2>
                                     <p class="item-intro text-muted">${proj.title}</p>
                                     <img class="img-fluid d-block mx-auto" src= ${proj.img} alt="">
                                     <ul class="list-inline">
