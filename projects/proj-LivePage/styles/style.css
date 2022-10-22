@@ -19,17 +19,17 @@
 
 @font-face{
     font-family: BioRhyme;
-    src: url(/fonts/BioRhyme/BioRhyme-Light.ttf);
+    src: url(/projects/proj-LivePage/fonts/BioRhyme/BioRhyme-Light.ttf);
 }
 
 @font-face{
     font-family: Roboto Mono;
-    src: url(/fonts/Roboto_Mono/RobotoMono-Regular.ttf);
+    src: url(/projects/proj-LivePage/fonts/Roboto_Mono/RobotoMono-Regular.ttf);
 }
 
 @font-face {
     font-family: playfair;
-    src: url(/fonts/Playfair/PlayfairDisplay-Regular.ttf);
+    src: url(/projects/proj-LivePage/fonts/Playfair/PlayfairDisplay-Regular.ttf);
 }
 
 /* BASICS  */

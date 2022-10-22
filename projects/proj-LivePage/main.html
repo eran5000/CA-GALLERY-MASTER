@@ -79,7 +79,10 @@
 
     <script>
         function toggleMenu() {
-            document.body.classList.toggle('menu-open');
+            if(window.getComputedStyle(document.querySelector('.btn-menu'), null).display === 'block'){
+                document.body.classList.toggle('menu-open');
+            }
+            
         }
     </script>
 
