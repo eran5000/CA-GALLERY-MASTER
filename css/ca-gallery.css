@@ -3,7 +3,7 @@
 }
 
 body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 p {
@@ -331,7 +331,7 @@ header.masthead .intro-text .intro-heading {
     max-width: none;
     height: 100%;
     margin: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .portfolio-modal .modal-content {
     min-height: 100%;
@@ -346,6 +346,7 @@ header.masthead .intro-text .intro-heading {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    overflow-y: scroll;
 }
 .portfolio-modal .modal-content h2 {
     /* width: min-content; */
@@ -373,13 +374,14 @@ header.masthead .intro-text .intro-heading {
     cursor: pointer;
 }
 .portfolio-modal .close-modal {
-    position: absolute;
+    /* position: absolute;
     top: 25px;
-    right: 25px;
-    width: 50px;
+    right: 25px; */
+    width: 80px;
     height: 50px;
     cursor: pointer;
     background-color: transparent;
+    align-self: flex-end;
 }
 .portfolio-modal .close-modal:hover {
     opacity: 0.3;
@@ -609,7 +611,6 @@ header.masthead .intro-text .intro-heading {
     .modal-content{
         align-items: center;
         justify-content: center;
-        overflow-y: scroll;
     }
 }
 
@@ -845,10 +846,9 @@ fieldset[disabled] .btn-xl:hover {
     margin-bottom: auto;
 }
 
-.modal-body{
-    overflow: hidden;
+/* .modal-body{
     overflow-wrap:break-word;
-}
+} */
 
 .carousel{
     height: 600px;
